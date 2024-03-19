@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: electrical-crayfish-java-quarkus-gitops
+  description: This is GitOps manifest for electrical-crayfish-java-quarkus   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: electrical-crayfish-java-quarkus
+    janus-idp.io/tekton: electrical-crayfish-java-quarkus 
+    backstage.io/kubernetes-id: electrical-crayfish-java-quarkus 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:electrical-crayfish-java-quarkus
